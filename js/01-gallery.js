@@ -33,15 +33,14 @@ function onClickFn(event) {
     `)
 
   instance.show();
-  
-  photoParent.addEventListener("keydown", (event) => {
+  function onCloseEscape(event){
+   
     if (event.code === "Escape") {
       instance.close();
-    }
-  });
+  }
+  }
+  
+  document.addEventListener("keydown", onCloseEscape);
 
-  photoParent.removeEventListener("click", onClickFn);
+  document.removeEventListener("keydown", onCloseEscape);
 }
-
-
-
