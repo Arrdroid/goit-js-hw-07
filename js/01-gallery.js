@@ -37,10 +37,10 @@ function onClickFn(event) {
    
     if (event.code === "Escape") {
       instance.close();
+      document.removeEventListener("keydown", onCloseEscape);
   }
   }
   
   document.addEventListener("keydown", onCloseEscape);
 
-  document.removeEventListener("keydown", onCloseEscape);
 }
